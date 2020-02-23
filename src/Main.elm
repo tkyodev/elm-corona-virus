@@ -29,6 +29,16 @@ import LineChart.Legends
 import LineChart.Line
 
 
+endDateBno : Date
+endDateBno =
+    { month = 2, day = 23 }
+
+
+endDateMhlw : Date
+endDateMhlw =
+    { month = 2, day = 18 }
+
+
 dataMhlwAsString : String
 dataMhlwAsString =
     """１, １, 1/15, 30代, 男, 神奈川県, なし, 38名特定 健康観察終了
@@ -111,8 +121,14 @@ type alias RowBno =
 
 dataBno : List RowBno
 dataBno =
+    -- February 23
+    [ { cases = 8, date = { month = 2, day = 23 }, time = { hours = 10, minutes = 25 }, comment = "8 new cases in Hokkaido Prefecture, Japan", url = "" }
+    , { cases = 2, date = { month = 2, day = 23 }, time = { hours = 9, minutes = 25 }, comment = "2 new cases in Aichi Prefecture, Japan", url = "" }
+    , { cases = 1, date = { month = 2, day = 23 }, time = { hours = 8, minutes = 58 }, comment = "1 new case in Chiba Prefecture, Japan", url = "" }
+    , { cases = 1, date = { month = 2, day = 23 }, time = { hours = 2, minutes = 45 }, comment = "1 new case in Hokkaido Prefecture, Japan", url = "" }
+
     -- February 22
-    [ { cases = 4, date = { month = 2, day = 22 }, time = { hours = 14, minutes = 10 }, comment = "4 new cases in Aichi Prefecture, Japan", url = "https://www3.nhk.or.jp/news/html/20200222/k10012297571000.html" }
+    , { cases = 4, date = { month = 2, day = 22 }, time = { hours = 14, minutes = 10 }, comment = "4 new cases in Aichi Prefecture, Japan", url = "https://www3.nhk.or.jp/news/html/20200222/k10012297571000.html" }
     , { cases = 1, date = { month = 2, day = 22 }, time = { hours = 14, minutes = 0 }, comment = "1 new case in Tokyo, Japan", url = "https://www3.nhk.or.jp/news/html/20200222/k10012297481000.html" }
     , { cases = 1, date = { month = 2, day = 22 }, time = { hours = 13, minutes = 30 }, comment = "1 new case in Chiba Prefecture, Japan", url = "https://www3.nhk.or.jp/news/html/20200222/k10012297461000.html" }
     , { cases = 1, date = { month = 2, day = 22 }, time = { hours = 13, minutes = 10 }, comment = "1 new case in Tochigi Prefecture, Japan. The patient is a former passenger of the “Diamond Princess” cruise ship", url = "https://www3.nhk.or.jp/news/html/20200222/k10012297561000.html" }
@@ -624,7 +640,7 @@ dataGraph1 =
     List.foldl
         (\( day, data ) acc -> Point (toFloat day) (toFloat data) :: acc)
         []
-        (dateForGraph2 { month = 1, day = 14 } { month = 2, day = 18 } totalMhlw)
+        (dateForGraph2 { month = 1, day = 14 } endDateMhlw totalMhlw)
 
 
 dataGraph2 : List Point
@@ -632,7 +648,7 @@ dataGraph2 =
     List.foldl
         (\( day, data ) acc -> Point (toFloat day) (toFloat data) :: acc)
         []
-        (dateForGraph2 { month = 1, day = 22 } { month = 2, day = 22 } totalBno)
+        (dateForGraph2 { month = 1, day = 22 } endDateBno totalBno)
 
 
 daysFromJanuaryFirst : Date -> Int

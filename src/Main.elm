@@ -537,7 +537,7 @@ customTick : Float -> LineChart.Axis.Tick.Config msg
 customTick number =
     let
         label =
-            LineChart.Junk.label LineChart.Colors.black (dateToString (daysFromJanuaryFirstToDate (round number)))
+            LineChart.Junk.label LineChart.Colors.black (dateToString (dateFromInt (round number)))
     in
     LineChart.Axis.Tick.custom
         { position = number
@@ -612,8 +612,8 @@ totalBno daysFromJanuary =
         dataBno
 
 
-dateForGraph2 : Date -> Date -> (Int -> Int) -> List ( Int, Int )
-dateForGraph2 start stop totalFunction =
+dateForGraph : Date -> Date -> (Int -> Int) -> List ( Int, Int )
+dateForGraph start stop totalFunction =
     let
         startDate =
             daysFromJanuaryFirst start
@@ -640,7 +640,24 @@ dataGraph1 =
     List.foldl
         (\( day, data ) acc -> Point (toFloat day) (toFloat data) :: acc)
         []
-        (dateForGraph2 { month = 1, day = 14 } endDateMhlw totalMhlw)
+        (dateForGraph { month = 1, day = 14 } endDateMhlw totalMhlw)
+
+
+tableWithTotals : ( List (Html.Html msg), Int )
+tableWithTotals =
+    List.foldl
+        (\( day, data ) ( elementList, total ) ->
+            ( Html.tr []
+                [ Html.td [ Html.Attributes.style "text-align" "center" ] [ Html.text <| dateToString (dateFromInt day) ]
+                , Html.td [ Html.Attributes.style "text-align" "right" ] [ Html.text <| String.fromInt data ]
+                , Html.td [ Html.Attributes.style "text-align" "right" ] [ Html.text <| String.fromInt (total + data) ]
+                ]
+                :: elementList
+            , total + data
+            )
+        )
+        ( [], 0 )
+        (List.reverse <| dateForGraph { month = 1, day = 22 } endDateBno totalBno)
 
 
 dataGraph2 : List Point
@@ -648,7 +665,7 @@ dataGraph2 =
     List.foldl
         (\( day, data ) acc -> Point (toFloat day) (toFloat data) :: acc)
         []
-        (dateForGraph2 { month = 1, day = 22 } endDateBno totalBno)
+        (dateForGraph { month = 1, day = 22 } endDateBno totalBno)
 
 
 daysFromJanuaryFirst : Date -> Int
@@ -666,8 +683,8 @@ daysFromJanuaryFirst date =
         0
 
 
-daysFromJanuaryFirstToDate : Int -> Date
-daysFromJanuaryFirstToDate days =
+dateFromInt : Int -> Date
+dateFromInt days =
     if days > 31 + 29 then
         { month = 3, day = days - 31 - 29 }
 
@@ -714,6 +731,18 @@ main =
                 , paragraph [] [ text "This graph rapresent the daily new cases of coronavirus contamination in Japan, excluding the contaminations found on the “Diamond Princess” cruise ship." ]
                 , paragraph [] [ text "The two lines are from two different sources: JMHLW, the \"Japanese Ministry of Health, Labour and Welfare\" and BNO News that aggregate news from several outlets." ]
                 , paragraph [] [ text "The two sources have sligtly different way of counting cases and cut the day with 9 hours of difference. BNO use UTC while JMHLW use Japanese Standard Time (+9). They are also updated with different frequency." ]
+                , paragraph [ Font.size 24 ] [ text "Data" ]
+                , paragraph [] [ text "I am getting a difference of 3 cases compared to the total number on the BNO site (146 on BNO, 143 in my calculation). Not sure why." ]
+                , el [] <|
+                    html <|
+                        Html.table [ Html.Attributes.style "border" "1px solid red" ] <|
+                            [ Html.tr []
+                                [ Html.th [] [ Html.text "Date" ]
+                                , Html.th [] [ Html.text "Daily cases (BNO)" ]
+                                , Html.th [] [ Html.text "Total cases (BNO)" ]
+                                ]
+                            ]
+                                ++ Tuple.first tableWithTotals
                 , paragraph [ Font.size 24 ] [ text "Sources" ]
                 , column [ spacing 10 ]
                     [ paragraph [ Font.bold ] [ text "BNO = BNO News" ]
@@ -721,6 +750,7 @@ main =
                     ]
                 , column [ spacing 10 ]
                     [ paragraph [ Font.bold ] [ text "JMHLW = Japanese Ministry of Health, Labour and Welfare" ]
+                    , paragraph [ Font.color <| rgb 0.8 0.1 0.1 ] [ text "The Japanese Ministry of Health, Labour and Welfare has not updated their page since February 18th." ]
                     , newTabLink [] { url = "https://www.mhlw.go.jp/stf/newpage_09637.html", label = paragraph [] [ text "Source: https://www.mhlw.go.jp/stf/newpage_09637.html" ] }
                     ]
 
@@ -760,8 +790,9 @@ title =
         , paragraph [ Font.center ]
             [ text "Code at "
             , newTabLink [] { url = "https://github.com/tkyodev/elm-coronavirus-japan", label = text "https://github.com/tkyodev/elm-coronavirus-japan" }
+            , text ". PRs are welcome!"
             ]
         , paragraph [ Font.center ]
-            [ text "Last updated on February 23, 2020 at 9:30 JST"
+            [ text "Last updated on February 24, 2020 at 9:06 JST"
             ]
         ]

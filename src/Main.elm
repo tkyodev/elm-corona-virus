@@ -32,7 +32,7 @@ import Set
 
 endDateBno : Date
 endDateBno =
-    { month = 2, day = 23 }
+    { month = 2, day = 24 }
 
 
 endDateMhlw : Date
@@ -123,8 +123,15 @@ type alias RowBno =
 
 dataBno : List RowBno
 dataBno =
+    -- February 24
+    [ { cases = 3, date = { month = 2, day = 24 }, time = { hours = 19, minutes = 45 }, location = Tokyo, comment = "NHK: Coronavirus 3 new infections in Tokyo A total of 32 people", url = "https://www3.nhk.or.jp/news/html/20200224/k10012299301000.html?utm_int=news-new_contents_list-items_002" }
+    , { cases = 1, date = { month = 2, day = 24 }, time = { hours = 18, minutes = 56 }, location = Kanagawa, comment = "NHK: One new infection confirmed in Kanagawa Prefecture 50-year-old man working in Tokyo", url = "https://www3.nhk.or.jp/news/html/20200224/k10012299251000.html?utm_int=news-new_contents_list-items_008" }
+    , { cases = 1, date = { month = 2, day = 24 }, time = { hours = 18, minutes = 1 }, location = Hokkaido, comment = "NHK: One of the new virus infections is a school bus driver, Aibetsu, Hokkaido", url = "https://www3.nhk.or.jp/news/html/20200224/k10012299181000.html?utm_int=news-new_contents_list-items_018" }
+    , { cases = 1, date = { month = 2, day = 24 }, time = { hours = 17, minutes = 50 }, location = Kanagawa, comment = "NHK: A man in his 50s who was confirmed to be infected worked for JR Sagamihara Station and was in charge of office work", url = "https://www3.nhk.or.jp/news/html/20200224/k10012299171000.html?utm_int=news-new_contents_list-items_019" }
+    , { cases = 4, date = { month = 2, day = 24 }, time = { hours = 17, minutes = 48 }, location = Hokkaido, comment = "NHK: Four new cases of coronavirus infection confirmed in Hokkaido ", url = "https://www3.nhk.or.jp/news/html/20200224/k10012299161000.html?utm_int=news-new_contents_list-items_020" }
+
     -- February 23
-    [ { cases = 8, date = { month = 2, day = 23 }, time = { hours = 10, minutes = 25 }, location = Hokkaido, comment = "8 new cases in Hokkaido Prefecture, Japan", url = "" }
+    , { cases = 8, date = { month = 2, day = 23 }, time = { hours = 10, minutes = 25 }, location = Hokkaido, comment = "8 new cases in Hokkaido Prefecture, Japan", url = "" }
     , { cases = 2, date = { month = 2, day = 23 }, time = { hours = 9, minutes = 25 }, location = Aichi, comment = "2 new cases in Aichi Prefecture, Japan", url = "" }
     , { cases = 1, date = { month = 2, day = 23 }, time = { hours = 8, minutes = 58 }, location = Chiba, comment = "1 new case in Chiba Prefecture, Japan", url = "" }
     , { cases = 1, date = { month = 2, day = 23 }, time = { hours = 2, minutes = 45 }, location = Hokkaido, comment = "1 new case in Hokkaido Prefecture, Japan", url = "" }
@@ -606,7 +613,7 @@ chart : Html.Html msg
 chart =
     LineChart.viewCustom chartConfig
         [ LineChart.line LineChart.Colors.purple LineChart.Dots.circle "JMHLW" data1
-        , LineChart.line LineChart.Colors.blue LineChart.Dots.square "BNO" data2
+        , LineChart.line LineChart.Colors.blue LineChart.Dots.square "BNO/NHK" data2
         ]
 
 

@@ -32,7 +32,7 @@ import Set
 
 endDateBno : Date
 endDateBno =
-    { month = 2, day = 24 }
+    { month = 2, day = 25 }
 
 
 endDateMhlw : Date
@@ -123,8 +123,11 @@ type alias RowBno =
 
 dataBno : List RowBno
 dataBno =
+    -- February 25
+    [ { cases = 1, date = { month = 2, day = 25 }, time = { hours = 4, minutes = 51 }, location = Nagano, comment = "1 new case in Japan. First in Nagano Prefecture", url = "https://www.pref.nagano.lg.jp/hoken-shippei/happyou/20200225corona.html" }
+
     -- February 24
-    [ { cases = 3, date = { month = 2, day = 24 }, time = { hours = 19, minutes = 45 }, location = Tokyo, comment = "NHK: Coronavirus 3 new infections in Tokyo A total of 32 people", url = "https://www3.nhk.or.jp/news/html/20200224/k10012299301000.html?utm_int=news-new_contents_list-items_002" }
+    , { cases = 3, date = { month = 2, day = 24 }, time = { hours = 19, minutes = 45 }, location = Tokyo, comment = "NHK: Coronavirus 3 new infections in Tokyo A total of 32 people", url = "https://www3.nhk.or.jp/news/html/20200224/k10012299301000.html?utm_int=news-new_contents_list-items_002" }
     , { cases = 1, date = { month = 2, day = 24 }, time = { hours = 18, minutes = 56 }, location = Kanagawa, comment = "NHK: One new infection confirmed in Kanagawa Prefecture 50-year-old man working in Tokyo", url = "https://www3.nhk.or.jp/news/html/20200224/k10012299251000.html?utm_int=news-new_contents_list-items_008" }
     , { cases = 1, date = { month = 2, day = 24 }, time = { hours = 18, minutes = 1 }, location = Hokkaido, comment = "NHK: One of the new virus infections is a school bus driver, Aibetsu, Hokkaido", url = "https://www3.nhk.or.jp/news/html/20200224/k10012299181000.html?utm_int=news-new_contents_list-items_018" }
     , { cases = 1, date = { month = 2, day = 24 }, time = { hours = 17, minutes = 50 }, location = Kanagawa, comment = "NHK: A man in his 50s who was confirmed to be infected worked for JR Sagamihara Station and was in charge of office work", url = "https://www3.nhk.or.jp/news/html/20200224/k10012299171000.html?utm_int=news-new_contents_list-items_019" }
@@ -300,6 +303,7 @@ type Location
     | Kumamoto
     | Kyoto
     | Mie
+    | Nagano
     | Nara
     | Okinawa
     | Osaka
@@ -352,6 +356,9 @@ fromLocationToString location =
 
         Mie ->
             "Mie 三重県"
+
+        Nagano ->
+            "Nagano 長野県"
 
         Nara ->
             "Nara 奈良県"
@@ -918,6 +925,6 @@ title =
             , text ". PRs are welcome!"
             ]
         , paragraph [ Font.center ]
-            [ text "Last updated on February 24, 2020 at 13:47 JST"
+            [ text "Last updated on February 25, 2020 at 17:35 JST"
             ]
         ]

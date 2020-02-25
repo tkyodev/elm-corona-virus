@@ -124,7 +124,8 @@ type alias RowBno =
 dataBno : List RowBno
 dataBno =
     -- February 25
-    [ { cases = 1, date = { month = 2, day = 25 }, time = { hours = 18, minutes = 51 }, location = Tokyo, comment = "Dentsu Infected person confirmation All employees working at the headquarters building In principle, work from home", url = "https://www3.nhk.or.jp/news/html/20200225/k10012300981000.html?utm_int=news-new_contents_list-items_003" }
+    [ { cases = 1, date = { month = 2, day = 25 }, time = { hours = 19, minutes = 2 }, location = Kumamoto, comment = "Confirmation of infection in women in their 60s", url = "https://www3.nhk.or.jp/news/html/20200225/k10012300941000.html?utm_int=news-new_contents_list-items_002" }
+    , { cases = 1, date = { month = 2, day = 25 }, time = { hours = 18, minutes = 51 }, location = Tokyo, comment = "Dentsu Infected person confirmation All employees working at the headquarters building In principle, work from home", url = "https://www3.nhk.or.jp/news/html/20200225/k10012300981000.html?utm_int=news-new_contents_list-items_003" }
     , { cases = 1, date = { month = 2, day = 25 }, time = { hours = 4, minutes = 51 }, location = Nagano, comment = "1 new case in Japan. First in Nagano Prefecture", url = "https://www.pref.nagano.lg.jp/hoken-shippei/happyou/20200225corona.html" }
 
     -- February 24

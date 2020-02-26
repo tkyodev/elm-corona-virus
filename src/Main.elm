@@ -32,7 +32,7 @@ import Set
 
 endDateBno : Date
 endDateBno =
-    { month = 2, day = 25 }
+    { month = 2, day = 26 }
 
 
 endDateMhlw : Date
@@ -123,8 +123,16 @@ type alias RowBno =
 
 dataBno : List RowBno
 dataBno =
+    [ { cases = 5, date = { month = 2, day = 26 }, time = { hours = 0, minutes = 0 }, location = Aichi, comment = "New coronavirus 894 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200223/k10012298071000.html" }
+    , { cases = 4, date = { month = 2, day = 26 }, time = { hours = 0, minutes = 0 }, location = Hokkaido, comment = "New coronavirus 894 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200223/k10012298071000.html" }
+    , { cases = 3, date = { month = 2, day = 26 }, time = { hours = 0, minutes = 0 }, location = Tokyo, comment = "New coronavirus 894 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200223/k10012298071000.html" }
+    , { cases = 3, date = { month = 2, day = 26 }, time = { hours = 0, minutes = 0 }, location = Chiba, comment = "New coronavirus 894 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200223/k10012298071000.html" }
+    , { cases = 1, date = { month = 2, day = 26 }, time = { hours = 0, minutes = 0 }, location = Kanagawa, comment = "New coronavirus 894 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200223/k10012298071000.html" }
+    , { cases = 1, date = { month = 2, day = 26 }, time = { hours = 0, minutes = 0 }, location = Gifu, comment = "New coronavirus 894 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200223/k10012298071000.html" }
+    , { cases = 1, date = { month = 2, day = 26 }, time = { hours = 0, minutes = 0 }, location = Nagano, comment = "New coronavirus 894 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200223/k10012298071000.html" }
+
     -- February 25
-    [ { cases = 1, date = { month = 2, day = 25 }, time = { hours = 19, minutes = 2 }, location = Kumamoto, comment = "Confirmation of infection in women in their 60s", url = "https://www3.nhk.or.jp/news/html/20200225/k10012300941000.html?utm_int=news-new_contents_list-items_002" }
+    , { cases = 1, date = { month = 2, day = 25 }, time = { hours = 19, minutes = 2 }, location = Kumamoto, comment = "Confirmation of infection in women in their 60s", url = "https://www3.nhk.or.jp/news/html/20200225/k10012300941000.html?utm_int=news-new_contents_list-items_002" }
     , { cases = 1, date = { month = 2, day = 25 }, time = { hours = 18, minutes = 51 }, location = Tokyo, comment = "Dentsu Infected person confirmation All employees working at the headquarters building In principle, work from home", url = "https://www3.nhk.or.jp/news/html/20200225/k10012300981000.html?utm_int=news-new_contents_list-items_003" }
     , { cases = 1, date = { month = 2, day = 25 }, time = { hours = 4, minutes = 51 }, location = Nagano, comment = "1 new case in Japan. First in Nagano Prefecture", url = "https://www.pref.nagano.lg.jp/hoken-shippei/happyou/20200225corona.html" }
 
@@ -178,7 +186,7 @@ dataBno =
     -- February 19
     , { cases = 1, date = { month = 2, day = 19 }, time = { hours = 12, minutes = 25 }, location = Aichi, comment = "1 new case in Aichi Prefecture, Japan", url = "https://www3.nhk.or.jp/news/html/20200219/k10012292821000.html" }
     , { cases = 3, date = { month = 2, day = 19 }, time = { hours = 11, minutes = 45 }, location = Tokyo, comment = "3 new cases in Tokyo, Japan", url = "https://www3.nhk.or.jp/news/html/20200219/k10012292791000.html" }
-    , { cases = 1, date = { month = 2, day = 19 }, time = { hours = 10, minutes = 10 }, location = Unknown "Returned from Hubei Province, China on Charter Flight 5", comment = "1 new case in Japan", url = "https://www3.nhk.or.jp/news/html/20200219/k10012292561000.html" } -- Returned from Hubei Province, China on Charter Flight 5
+    , { cases = 1, date = { month = 2, day = 19 }, time = { hours = 10, minutes = 10 }, location = Tokushima, comment = "1 new case in Japan", url = "https://www3.nhk.or.jp/news/html/20200219/k10012292561000.html" } -- ASSIGNED TO TOKUSHIMA FOR COUNTING - Returned from Hubei Province, China on Charter Flight 5
     , { cases = 1, date = { month = 2, day = 19 }, time = { hours = 9, minutes = 10 }, location = Okinawa, comment = "1 new case in Okinawa Prefecture, Japan", url = "https://www3.nhk.or.jp/news/html/20200219/k10012292401000.html" }
     , { cases = 1, date = { month = 2, day = 19 }, time = { hours = 8, minutes = 40 }, location = Hokkaido, comment = "1 new case in Hokkaido Prefecture", url = "https://www3.nhk.or.jp/news/html/20200219/k10012292301000.html" }
     , { cases = 1, date = { month = 2, day = 19 }, time = { hours = 3, minutes = 22 }, location = Hokkaido, comment = "1 new case in Hokkaido Prefecture, Japan", url = "https://www3.nhk.or.jp/sapporo-news/20200219/7000018076.html" }
@@ -214,7 +222,7 @@ dataBno =
     , { cases = 1, date = { month = 2, day = 14 }, time = { hours = 14, minutes = 3 }, location = Kanagawa, comment = "1 new case in Japan", url = "https://www3.nhk.or.jp/news/html/20200214/k10012286511000.html" } -- New virus Infected by a local male employee living in Kanagawa Prefecture in his thirties
     , { cases = 1, date = { month = 2, day = 14 }, time = { hours = 14, minutes = 0 }, location = Aichi, comment = "1 new case in Japan", url = "https://www3.nhk.or.jp/news/html/20200214/k10012286491000.html" } -- New virus confirmed in 60s Japanese male in Aichi prefecture
     , { cases = 1, date = { month = 2, day = 14 }, time = { hours = 13, minutes = 54 }, location = Hokkaido, comment = "1 new case in Japan", url = "https://www3.nhk.or.jp/news/html/20200214/k10012286451000.html" } --New virus Infected Japanese male in their 50s in Hokkaido Treated in intensive care unit
-    , { cases = 1, date = { month = 2, day = 14 }, time = { hours = 13, minutes = 50 }, location = Unknown "Inspection results of returning Japanese on charter flights related to new coronavirus", comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09537.html" } -- Inspection results of returning Japanese on charter flights related to new coronavirus
+    , { cases = 1, date = { month = 2, day = 14 }, time = { hours = 13, minutes = 50 }, location = Nara, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09537.html" } -- ASSIGNED TO NARA FOR COUNTING - Inspection results of returning Japanese on charter flights related to new coronavirus
     , { cases = 2, date = { month = 2, day = 14 }, time = { hours = 10, minutes = 9 }, location = Tokyo, comment = "2 new cases in Japan", url = "https://www3.nhk.or.jp/news/html/20200214/k10012285891000.html" } -- New virus confirmed infection of two people involved in taxi drivers in Tokyo
     , { cases = 1, date = { month = 2, day = 14 }, time = { hours = 7, minutes = 51 }, location = Okinawa, comment = "1 new case in Japan", url = "https://www.okinawatimes.co.jp/articles/-/534920" } --New Corona introduces passengers of Diamond Princess, a 60-year-old female taxi driver, first infected in Okinawa
     , { cases = 1, date = { month = 2, day = 14 }, time = { hours = 0, minutes = 43 }, location = Wakayama, comment = "1 new case in Japan", url = "https://www3.nhk.or.jp/news/html/20200214/k10012285021000.html" } --Wakayama 70's male confirmed infection Severe "nosocomial infection is unlikely" governor
@@ -229,48 +237,48 @@ dataBno =
     , { cases = 1, date = { month = 2, day = 12 }, time = { hours = 2, minutes = 52 }, location = Ship, comment = "1 new case in Japan. It is one of the quarantine officers who was working on board the “Diamond Princess” cruise ship off Yokohama. This case is not included in the total for the ship’s passengers and crew", url = "https://www.mhlw.go.jp/stf/newpage_09424.html" } -- About new coronavirus infected person (information offer)
 
     -- February 11
-    , { cases = 2, date = { month = 2, day = 11 }, time = { hours = 6, minutes = 57 }, location = Unknown "Source link is broken", comment = "2 new cases in Japan", url = "https://www3.nhk.or.jp/shutoken-news/20200211/1000043903.html" }
+    , { cases = 3, date = { month = 2, day = 11 }, time = { hours = 6, minutes = 57 }, location = Ship, comment = "2 new cases in Japan", url = "https://www3.nhk.or.jp/shutoken-news/20200211/1000043903.html" } -- ASSIGNED TO SHIP FOR COUNTING - INCREASED BY ONE
 
     -- February 9
-    , { cases = 1, date = { month = 2, day = 9 }, time = { hours = 3, minutes = 6 }, location = Unknown "Inspection results of returned Japanese on charter flights (fourth flight) related to the new coronavirus", comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09399.html" } -- Inspection results of returned Japanese on charter flights (fourth flight) related to the new coronavirus
+    , { cases = 1, date = { month = 2, day = 9 }, time = { hours = 3, minutes = 6 }, location = Ishikawa, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09399.html" } -- ASSIGNED TO ISHIKAWA FOR COUNTING - Inspection results of returned Japanese on charter flights (fourth flight) related to the new coronavirus
 
     -- February 5
     , { cases = 1, date = { month = 2, day = 5 }, time = { hours = 19, minutes = 2 }, location = Kyoto, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09336.html" } -- Outbreak of new coronavirus-related patients (21st case)
     , { cases = 1, date = { month = 2, day = 5 }, time = { hours = 19, minutes = 1 }, location = Chiba, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09333.html" } -- About outbreak of patient associated with new coronavirus (the 20th case)
 
     -- February 4
-    , { cases = 1, date = { month = 2, day = 4 }, time = { hours = 16, minutes = 49 }, location = China_Hubei, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09312.html" } -- About outbreak of patient of pneumonia associated with new type coronavirus (the 19th case)
+    , { cases = 1, date = { month = 2, day = 4 }, time = { hours = 16, minutes = 49 }, location = Ishikawa, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09312.html" } -- ASSIGNED TO ISHIKAWA FOR COUNTING - About outbreak of patient of pneumonia associated with new type coronavirus (the 19th case)
     , { cases = 1, date = { month = 2, day = 4 }, time = { hours = 14, minutes = 1 }, location = Chiba, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09311.html" } -- Outbreak of patients with pneumonia related to novel coronavirus (18 cases)
-    , { cases = 1, date = { month = 2, day = 4 }, time = { hours = 13, minutes = 12 }, location = China_Wuhan, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09310.html" } -- Outbreak of patients with pneumonia related to novel coronavirus (17 cases)
+    , { cases = 1, date = { month = 2, day = 4 }, time = { hours = 13, minutes = 12 }, location = Kumamoto, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09310.html" } -- ASSIGNED TO KUMAMOTO FOR COUNTING - Outbreak of patients with pneumonia related to novel coronavirus (17 cases)
 
     -- February 1
-    , { cases = 3, date = { month = 2, day = 1 }, time = { hours = 14, minutes = 51 }, location = Unknown "Unclear, one from China, the other two under investigation", comment = "3 new cases in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09278.html" } -- Outbreaks of patients (14th and 15th cases) and asymptomatic pathogen carriers (*) related to the novel coronavirus
+    , { cases = 3, date = { month = 2, day = 1 }, time = { hours = 14, minutes = 51 }, location = Kanagawa, comment = "3 new cases in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09278.html" } -- ASSIGNED TO KANAGAWA FOR COUNTING - Outbreaks of patients (14th and 15th cases) and asymptomatic pathogen carriers (*) related to the novel coronavirus
 
     -- January 31
-    , { cases = 2, date = { month = 1, day = 31 }, time = { hours = 20, minutes = 2 }, location = Unknown "Under investigation", comment = "2 new asymptomatic cases in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09273.html" } -- About outbreak of asymptomatic pathogen carrier (*) associated with new coronavirus
+    , { cases = 2, date = { month = 1, day = 31 }, time = { hours = 20, minutes = 2 }, location = Aichi, comment = "2 new asymptomatic cases in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09273.html" } -- ASSIGNED TO AICHI FOR COUNTING - About outbreak of asymptomatic pathogen carrier (*) associated with new coronavirus
     , { cases = 1, date = { month = 1, day = 31 }, time = { hours = 10, minutes = 19 }, location = Chiba, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09271.html" } -- Outbreak of patients with pneumonia related to novel coronavirus (13 cases)
 
     -- January 30
     , { cases = 1, date = { month = 1, day = 30 }, time = { hours = 13, minutes = 40 }, location = Kyoto, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09239.html" } -- Outbreak of pneumonia related to new type of coronavirus (12th case)
-    , { cases = 1, date = { month = 1, day = 30 }, time = { hours = 13, minutes = 30 }, location = China_Hunan, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09237.html" } -- Outbreak of patients with pneumonia related to novel coronavirus (11th case)
+    , { cases = 1, date = { month = 1, day = 30 }, time = { hours = 13, minutes = 30 }, location = Tokyo, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09237.html" } -- ASSIGNED TO TOKYO FOR COUNTING -  Outbreak of patients with pneumonia related to novel coronavirus (11th case)
     , { cases = 1, date = { month = 1, day = 30 }, time = { hours = 12, minutes = 36 }, location = Mie, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09236.html" } -- About outbreak of patient of pneumonia associated with new type coronavirus (tenth case)
-    , { cases = 3, date = { month = 1, day = 30 }, time = { hours = 0, minutes = 13 }, location = Unknown "One from China, the other two under investigation", comment = "3 new cases in Japan. Three people who were evacuated from Wuhan have tested positive for coronavirus", url = "https://www.mhlw.go.jp/stf/newpage_09205.html" } -- About outbreak of patient (9th) and asymptomatic pathogen carrier (*) related to new type coronavirus
+    , { cases = 3, date = { month = 1, day = 30 }, time = { hours = 0, minutes = 13 }, location = Aichi, comment = "3 new cases in Japan. Three people who were evacuated from Wuhan have tested positive for coronavirus", url = "https://www.mhlw.go.jp/stf/newpage_09205.html" } -- ASSIGNED TO AICHI FOR COUNTING - About outbreak of patient (9th) and asymptomatic pathogen carrier (*) related to new type coronavirus
 
     -- January 29
     , { cases = 1, date = { month = 1, day = 29 }, time = { hours = 14, minutes = 1 }, location = Osaka, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09201.html" } -- About outbreak of patient of pneumonia associated with new coronavirus (the eighth case)
 
     -- January 28
-    , { cases = 1, date = { month = 1, day = 28 }, time = { hours = 22, minutes = 35 }, location = China_Wuhan, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09158.html" } -- About outbreak of patient of pneumonia related to new type coronavirus (the seventh case)
-    , { cases = 2, date = { month = 1, day = 28 }, time = { hours = 9, minutes = 6 }, location = China_Wuhan, comment = "2 new cases in Japan. (Source 1, Source 2)", url = "https://www.mhlw.go.jp/stf/newpage_09154.html" } -- About outbreak of patient of pneumonia associated with new coronavirus (fifth case)
+    , { cases = 1, date = { month = 1, day = 28 }, time = { hours = 22, minutes = 35 }, location = Tokyo, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09158.html" } -- ASSIGNED TO TOKYO FOR COUNTING - About outbreak of patient of pneumonia related to new type coronavirus (the seventh case)
+    , { cases = 2, date = { month = 1, day = 28 }, time = { hours = 9, minutes = 6 }, location = Hokkaido, comment = "2 new cases in Japan. (Source 1, Source 2)", url = "https://www.mhlw.go.jp/stf/newpage_09154.html" } -- ASSIGNED TO HOKKAIDO FOR COUNTING - About outbreak of patient of pneumonia associated with new coronavirus (fifth case)
 
     -- January 26
-    , { cases = 1, date = { month = 1, day = 26 }, time = { hours = 10, minutes = 55 }, location = China_Wuhan, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09100.html" } -- Outbreak of pneumonia related to novel coronavirus (4th case)
+    , { cases = 1, date = { month = 1, day = 26 }, time = { hours = 10, minutes = 55 }, location = Hokkaido, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09100.html" } -- ASSIGNED TO HOKKAIDO FOR COUNTING - Outbreak of pneumonia related to novel coronavirus (4th case)
 
     -- January 25
-    , { cases = 1, date = { month = 1, day = 25 }, time = { hours = 7, minutes = 0 }, location = China_Hubei, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09099.html" } -- Outbreak of patients with pneumonia related to novel coronavirus (third case)
+    , { cases = 1, date = { month = 1, day = 25 }, time = { hours = 7, minutes = 0 }, location = Hokkaido, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09099.html" } -- ASSIGNED TO HOKKAIDO FOR COUNTING - Outbreak of patients with pneumonia related to novel coronavirus (third case)
 
     -- January 23
-    , { cases = 1, date = { month = 1, day = 23 }, time = { hours = 22, minutes = 21 }, location = China_Hubei, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09079.html" } -- About outbreak of patient of pneumonia associated with new type coronavirus (the second case)
+    , { cases = 1, date = { month = 1, day = 23 }, time = { hours = 22, minutes = 21 }, location = Hokkaido, comment = "1 new case in Japan", url = "https://www.mhlw.go.jp/stf/newpage_09079.html" } -- ASSIGNED TO HOKKAIDO FOR COUNTING - About outbreak of patient of pneumonia associated with new type coronavirus (the second case)
     ]
 
 
@@ -299,6 +307,7 @@ type Location
     | Aichi
     | Chiba
     | Fukuoka
+    | Gifu
     | Hokkaido
     | Ishikawa
     | Kanagawa
@@ -311,6 +320,7 @@ type Location
     | Osaka
     | Saitama
     | Tochigi
+    | Tokushima
     | Tokyo
     | Wakayama
       --
@@ -340,6 +350,9 @@ fromLocationToString location =
 
         Fukuoka ->
             "Fukuoka 福岡県"
+
+        Gifu ->
+            "Gifu 岐阜県"
 
         Hokkaido ->
             "Hokkaido 北海道"
@@ -377,6 +390,9 @@ fromLocationToString location =
         Tochigi ->
             "Tochigi 栃木県"
 
+        Tokushima ->
+            "Tokushima 徳島県"
+
         Tokyo ->
             "Tokyo 東京都"
 
@@ -391,7 +407,7 @@ fromLocationToString location =
             "調査中"
 
         Ship ->
-            "\"Diamond Princess\" cruise ship"
+            "\"Diamond Princess\" cruise ship staff"
 
 
 fromStringToLocation : String -> Location

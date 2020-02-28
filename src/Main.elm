@@ -30,9 +30,13 @@ import LineChart.Line
 import Set
 
 
+updated =
+    "Feb 28"
+
+
 endDateBno : Date
 endDateBno =
-    { month = 2, day = 27 }
+    { month = 2, day = 28 }
 
 
 endDateMhlw : Date
@@ -123,8 +127,20 @@ type alias RowBno =
 
 dataBno : List RowBno
 dataBno =
+    -- February 28
+    [ { cases = 12, date = { month = 2, day = 28 }, time = { hours = 0, minutes = 0 }, location = Hokkaido, comment = "New coronavirus 933 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200228/k10012306811000.html?utm_int=word_contents_list-items_007&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
+    , { cases = 1, date = { month = 2, day = 28 }, time = { hours = 0, minutes = 0 }, location = Shizuoka, comment = "New coronavirus 933 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200228/k10012306811000.html?utm_int=word_contents_list-items_007&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
+    , { cases = 1, date = { month = 2, day = 28 }, time = { hours = 0, minutes = 0 }, location = Kanagawa, comment = "New coronavirus 933 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200228/k10012306811000.html?utm_int=word_contents_list-items_007&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
+    , { cases = 1, date = { month = 2, day = 28 }, time = { hours = 0, minutes = 0 }, location = Ship, comment = "New coronavirus 933 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200228/k10012306811000.html?utm_int=word_contents_list-items_007&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
+
     -- February 27
-    [ { cases = 13, date = { month = 2, day = 27 }, time = { hours = 8, minutes = 45 }, location = Hokkaido, comment = "New coronavirus 912 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200227/k10012304601000.html?utm_int=word_contents_list-items_002&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
+    , { cases = 2, date = { month = 2, day = 27 }, time = { hours = 0, minutes = 0 }, location = Aichi, comment = "", url = "https://www3.nhk.or.jp/news/html/20200227/k10012303921000.html" }
+    , { cases = 1, date = { month = 2, day = 27 }, time = { hours = 0, minutes = 0 }, location = Tokyo, comment = "", url = "https://www3.nhk.or.jp/news/html/20200227/k10012303921000.html" }
+    , { cases = 2, date = { month = 2, day = 27 }, time = { hours = 0, minutes = 0 }, location = Kanagawa, comment = "", url = "https://www3.nhk.or.jp/news/html/20200227/k10012303921000.html" }
+    , { cases = 1, date = { month = 2, day = 27 }, time = { hours = 0, minutes = 0 }, location = Osaka, comment = "", url = "https://www3.nhk.or.jp/news/html/20200227/k10012303921000.html" }
+
+    --
+    , { cases = 13, date = { month = 2, day = 27 }, time = { hours = 8, minutes = 45 }, location = Hokkaido, comment = "New coronavirus 912 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200227/k10012304601000.html?utm_int=word_contents_list-items_002&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
     , { cases = 1, date = { month = 2, day = 27 }, time = { hours = 0, minutes = 0 }, location = Kanagawa, comment = "New coronavirus 912 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200227/k10012303921000.html?utm_int=news_contents_news-main_005" }
     , { cases = 1, date = { month = 2, day = 27 }, time = { hours = 0, minutes = 0 }, location = Ishikawa, comment = "New coronavirus 912 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200227/k10012303921000.html?utm_int=news_contents_news-main_005" }
     , { cases = 1, date = { month = 2, day = 27 }, time = { hours = 0, minutes = 0 }, location = Gifu, comment = "New coronavirus 912 confirmed infections in Japan (including cruise ships)", url = "https://www3.nhk.or.jp/news/html/20200227/k10012303921000.html?utm_int=news_contents_news-main_005" }
@@ -327,6 +343,7 @@ type Location
     | Okinawa
     | Osaka
     | Saitama
+    | Shizuoka
     | Tochigi
     | Tokushima
     | Tokyo
@@ -394,6 +411,9 @@ fromLocationToString location =
 
         Saitama ->
             "Saitama 埼玉県"
+
+        Shizuoka ->
+            "Shizuoka 静岡県"
 
         Tochigi ->
             "Tochigi 栃木県"
@@ -848,7 +868,7 @@ main =
                     , Border.rounded 5
                     , width fill
                     ]
-                    [ paragraph [ Font.center, Font.size 24, moveDown 20 ] [ text "Daily new cases of coronavirus in Japan" ]
+                    [ paragraph [ Font.center, Font.size 24, moveDown 20 ] [ text <| updated ++ " - Daily new cases of coronavirus in Japan" ]
                     , el [ width fill ] <| html <| chart
                     ]
                 , paragraph [] [ text "This graph rapresent the daily new cases of coronavirus contamination in Japan, excluding the contaminations found on the “Diamond Princess” cruise ship." ]
@@ -951,6 +971,6 @@ title =
             , text ". PRs are welcome!"
             ]
         , paragraph [ Font.center ]
-            [ text "Last updated on February 25, 2020 at 17:35 JST"
+            [ text <| "Last updated on " ++ updated
             ]
         ]

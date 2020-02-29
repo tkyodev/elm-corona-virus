@@ -32,12 +32,12 @@ import Set
 
 updated : String
 updated =
-    "Feb 28"
+    "Feb 29"
 
 
 endDateBno : Date
 endDateBno =
-    { month = 2, day = 28 }
+    { month = 2, day = 29 }
 
 
 endDateMhlw : Date
@@ -128,8 +128,15 @@ type alias RowBno =
 
 dataBno : List RowBno
 dataBno =
+    -- February 29
+    [ { cases = 4, date = { month = 2, day = 29 }, time = { hours = 0, minutes = 0 }, location = Hokkaido, comment = "新型コロナウイルス 国内の感染確認946人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200229/k10012307671000.html?utm_int=word_contents_list-items_017&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
+    , { cases = 1, date = { month = 2, day = 29 }, time = { hours = 0, minutes = 0 }, location = Tokyo, comment = "新型コロナウイルス 国内の感染確認946人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200229/k10012307671000.html?utm_int=word_contents_list-items_017&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
+    , { cases = 1, date = { month = 2, day = 29 }, time = { hours = 0, minutes = 0 }, location = Miyagi, comment = "新型コロナウイルス 国内の感染確認946人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200229/k10012307671000.html?utm_int=word_contents_list-items_017&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
+    , { cases = 1, date = { month = 2, day = 29 }, time = { hours = 0, minutes = 0 }, location = Niigata, comment = "新型コロナウイルス 国内の感染確認946人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200229/k10012307671000.html?utm_int=word_contents_list-items_017&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
+    , { cases = 1, date = { month = 2, day = 29 }, time = { hours = 0, minutes = 0 }, location = Kochi, comment = "新型コロナウイルス 国内の感染確認946人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200229/k10012307671000.html?utm_int=word_contents_list-items_017&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
+
     -- February 28
-    [ { cases = 1, date = { month = 2, day = 28 }, time = { hours = 0, minutes = 0 }, location = Aichi, comment = "新型コロナウイルス 国内の感染確認938人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200228/k10012306811000.html" }
+    , { cases = 1, date = { month = 2, day = 28 }, time = { hours = 0, minutes = 0 }, location = Aichi, comment = "新型コロナウイルス 国内の感染確認938人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200228/k10012306811000.html" }
     , { cases = 1, date = { month = 2, day = 28 }, time = { hours = 0, minutes = 0 }, location = Ishikawa, comment = "新型コロナウイルス 国内の感染確認938人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200228/k10012306811000.html" }
     , { cases = 2, date = { month = 2, day = 28 }, time = { hours = 0, minutes = 0 }, location = Osaka, comment = "新型コロナウイルス 国内の感染確認938人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200228/k10012306811000.html" }
     , { cases = 1, date = { month = 2, day = 28 }, time = { hours = 0, minutes = 0 }, location = Ship, comment = "新型コロナウイルス 国内の感染確認938人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200228/k10012306811000.html" }
@@ -342,11 +349,14 @@ type Location
     | Hokkaido
     | Ishikawa
     | Kanagawa
+    | Kochi
     | Kumamoto
     | Kyoto
+    | Miyagi
     | Mie
     | Nagano
     | Nara
+    | Niigata
     | Okinawa
     | Osaka
     | Saitama
@@ -395,6 +405,9 @@ fromLocationToString location =
         Kanagawa ->
             "Kanagawa 神奈川県"
 
+        Kochi ->
+            "Kochi 高知県"
+
         Kumamoto ->
             "Kumamoto 熊本県"
 
@@ -404,11 +417,17 @@ fromLocationToString location =
         Mie ->
             "Mie 三重県"
 
+        Miyagi ->
+            "Miyagi 宮城県"
+
         Nagano ->
             "Nagano 長野県"
 
         Nara ->
             "Nara 奈良県"
+
+        Niigata ->
+            "Niigata 新潟県"
 
         Okinawa ->
             "Okinawa 沖縄県"

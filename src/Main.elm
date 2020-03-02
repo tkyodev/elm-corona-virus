@@ -32,12 +32,12 @@ import Set
 
 updated : String
 updated =
-    "March 1"
+    "March 2"
 
 
 endDateBno : Date
 endDateBno =
-    { month = 3, day = 1 }
+    { month = 3, day = 2 }
 
 
 endDateMhlw : Date
@@ -128,8 +128,16 @@ type alias RowBno =
 
 dataBno : List RowBno
 dataBno =
+    -- March 2
+    [ { cases = 5, date = { month = 3, day = 2 }, time = { hours = 0, minutes = 0 }, location = Hokkaido, comment = "", url = "https://www3.nhk.or.jp/news/html/20200302/k10012309381000.html" }
+    , { cases = 5, date = { month = 3, day = 2 }, time = { hours = 0, minutes = 0 }, location = Kanagawa, comment = "", url = "https://www3.nhk.or.jp/news/html/20200302/k10012309381000.html" }
+    , { cases = 2, date = { month = 3, day = 2 }, time = { hours = 0, minutes = 0 }, location = Osaka, comment = "", url = "https://www3.nhk.or.jp/news/html/20200302/k10012309381000.html" }
+    , { cases = 4, date = { month = 3, day = 2 }, time = { hours = 0, minutes = 0 }, location = Niigata, comment = "", url = "https://www3.nhk.or.jp/news/html/20200302/k10012309381000.html" }
+    , { cases = 1, date = { month = 3, day = 2 }, time = { hours = 0, minutes = 0 }, location = Kochi, comment = "", url = "https://www3.nhk.or.jp/news/html/20200302/k10012309381000.html" }
+    , { cases = 1, date = { month = 3, day = 2 }, time = { hours = 0, minutes = 0 }, location = Ehime, comment = "", url = "https://www3.nhk.or.jp/news/html/20200302/k10012309381000.html" }
+
     -- March 1
-    [ { cases = 2, date = { month = 3, day = 1 }, time = { hours = 0, minutes = 0 }, location = Hokkaido, comment = "新型コロナウイルス 国内の感染確認961人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200301/k10012308361000.html?utm_int=word_contents_list-items_003&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
+    , { cases = 2, date = { month = 3, day = 1 }, time = { hours = 0, minutes = 0 }, location = Hokkaido, comment = "新型コロナウイルス 国内の感染確認961人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200301/k10012308361000.html?utm_int=word_contents_list-items_003&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
     , { cases = 2, date = { month = 3, day = 1 }, time = { hours = 0, minutes = 0 }, location = Tokyo, comment = "新型コロナウイルス 国内の感染確認961人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200301/k10012308361000.html?utm_int=word_contents_list-items_003&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
     , { cases = 4, date = { month = 3, day = 1 }, time = { hours = 0, minutes = 0 }, location = Aichi, comment = "新型コロナウイルス 国内の感染確認961人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200301/k10012308361000.html?utm_int=word_contents_list-items_003&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
     , { cases = 3, date = { month = 3, day = 1 }, time = { hours = 0, minutes = 0 }, location = Kanagawa, comment = "新型コロナウイルス 国内の感染確認961人（クルーズ船含む）", url = "https://www3.nhk.or.jp/news/html/20200301/k10012308361000.html?utm_int=word_contents_list-items_003&word_result=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9" }
@@ -354,6 +362,7 @@ type Location
       --
     | Aichi
     | Chiba
+    | Ehime
     | Fukuoka
     | Gifu
     | Hokkaido
@@ -400,6 +409,9 @@ fromLocationToString location =
 
         Chiba ->
             "Chiba 千葉県"
+
+        Ehime ->
+            "Ehime 愛媛県"
 
         Fukuoka ->
             "Fukuoka 福岡県"
